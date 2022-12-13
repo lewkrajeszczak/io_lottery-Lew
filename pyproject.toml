@@ -8,6 +8,7 @@ packages = [{include = "io_lottery"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+flask = "^2.2.2"
 
 
 [build-system]
