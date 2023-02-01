@@ -17,4 +17,4 @@ def test_returns_sent_user() -> None:
     payload = UserPayloadFactory()
     with app.test_request_context(path="/users", method='POST', json=payload):
         actual = add_user()
-    assert actual == payload
+    assert actual.json == payload
