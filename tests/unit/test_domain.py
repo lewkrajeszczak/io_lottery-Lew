@@ -1,5 +1,5 @@
 from factory import Factory
-from factory.fuzzy import FuzzyText
+from factory.fuzzy import FuzzyText, FuzzyInteger, FuzzyFloat
 from pytest import fixture
 
 from io_lottery.domain import User
@@ -10,6 +10,11 @@ class UserFactory(Factory):
         model = User
 
     first_name = FuzzyText()
+    last_name = FuzzyText()
+    email = FuzzyText()
+    age = FuzzyInteger(low=0)
+    essays_count = FuzzyInteger(low=0)
+    rating = FuzzyFloat(low=0)
 
 
 @fixture
