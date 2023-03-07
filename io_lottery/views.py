@@ -2,4 +2,5 @@ from flask.views import MethodView
 
 
 class UserView(MethodView):
-    pass
+    def post(self) -> None:
+        raise NotImplementedError
