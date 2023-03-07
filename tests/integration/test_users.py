@@ -36,3 +36,9 @@ def test_returns_unimplemented() -> None:
     with app.test_client() as c:
         actual = c.get("/users/24")
     assert actual.status_code == 501
+
+
+def test_returns_unimplemented_on_new_user() -> None:
+    with app.test_client() as c:
+        actual = c.post("/users_new")
+    assert actual.status_code == 500
