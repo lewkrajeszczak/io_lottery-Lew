@@ -30,3 +30,9 @@ def test_prints_added_user_on_post(capsys) -> None:
     sorted_dict = {k: payload[k] for k in sorted(payload)}
     expected = f"{sorted_dict}\n"
     assert actual == expected
+
+
+def test_returns_unimplemented() -> None:
+    with app.test_client() as c:
+        actual = c.get("/users/24")
+    assert actual.status_code == 501
