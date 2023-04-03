@@ -23,3 +23,10 @@ def test_returns_sent_user() -> None:
 def test_returns_unimplemented() -> None:
     actual = get_user()
     assert actual.status_code == 501
+
+def test_returns_get_user() -> None:
+    with app.test_request_context(path="/users/<id>", method='GET'):
+        actual = get_user(1)
+    assert actual.status_code == 501
+
+
