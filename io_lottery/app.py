@@ -65,7 +65,6 @@ def delete_user(user_id):
     user = next((user for user in users if user['id'] == user_id), None)
     if not user:
         abort(404)
-
     users.remove(user)
 
     return '', 204
